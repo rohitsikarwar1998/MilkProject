@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "848603999620",
+    "project_id": "milkproject-4984e",
+    "storage_bucket": "milkproject-4984e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848603999620:android:f70aa27813e7a266ff01d1",
+        "android_client_info": {
+          "package_name": "com.milkproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "848603999620-qs4lph9nmr4ibpgrhbb1g7k0qmufq7ob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxzB_e7JQ3gWqx4Q2nvaybJiBvOMhPJIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "848603999620-qs4lph9nmr4ibpgrhbb1g7k0qmufq7ob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
