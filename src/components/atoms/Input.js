@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = ({placeHolder, type}) => {
-  return <Inp placeholder={placeHolder} keyboardType={type} />;
+const Input = ({placeHolder, type, ...rest}) => {
+  return <Inp placeholder={placeHolder} keyboardType={type} {...rest} />;
 };
 
 export default Input;

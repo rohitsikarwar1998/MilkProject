@@ -1,33 +1,33 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import styled from 'styled-components';
 import Login from './src/screens/Login';
+import Home from './src/screens/Home';
+import {StatusBar, ActivityIndicator} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import useAuth from './src/apis/useAuth';
 
-const Container = styled.View`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: antiquewhite;
-`;
-
-// const TitleContainer = styled.View`
-//   width: 100%;
-//   height: 100%;
-//   box-shadow: 0 0 10px #ccc;
-//   background-color: white;
-//   padding: 20px;
-//   border-radius: 20px;
-// `;
-
-// const Title = styled.Text`
-//   font-size: 20px;
-// `;
+const Stack = createStackNavigator();
 
 const App = () => {
-  return (
-    <Container>
-      <Login />
-    </Container>
+  const [user, intializing] = useAuth();
+  console.log(user);
+  return intializing ? (
+    <ActivityIndicator size="large" color="#00ff00" />
+  ) : (
+    <>
+      <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      />
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName={user ? 'Home' : 'Login'}>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Login" component={Login} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 };
 
