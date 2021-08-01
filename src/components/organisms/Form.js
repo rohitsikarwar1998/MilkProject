@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import InputForm from '../molecules/InputForm';
 import Button from '../atoms/Button';
 import Seperator from '../atoms/Seperator';
-import {signInWithPhoneNumber, confirmCode, resetStack} from '../../utils/auth';
+import {resetStack} from '../../utils/auth';
+import {signInWithPhoneNumber, confirmCode} from '../../apis/apiCalls';
 
 const Form = ({otp, confirm, setConfirm, code, setCode, navigation}) => {
   const [mobileNumber, setMobileNumber] = useState('');

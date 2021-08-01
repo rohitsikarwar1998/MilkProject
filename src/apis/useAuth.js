@@ -7,7 +7,7 @@ const useAuth = () => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState(null);
 
-  console.log(initializing);
+  // console.log(initializing);
 
   // Handle user state changes
   function onAuthStateChanged(us) {

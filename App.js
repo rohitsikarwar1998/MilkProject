@@ -9,9 +9,9 @@ import useAuth from './src/apis/useAuth';
 
 const Stack = createStackNavigator();
 
+export const UserContext = React.createContext();
 const App = () => {
   const [user, intializing] = useAuth();
-  console.log(user);
   return intializing ? (
     <ActivityIndicator size="large" color="#00ff00" />
   ) : (
@@ -21,12 +21,14 @@ const App = () => {
         translucent
         backgroundColor="transparent"
       />
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName={user ? 'Home' : 'Login'}>
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Login" component={Login} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <UserContext.Provider value={user}>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName={user ? 'Home' : 'Login'}>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Login" component={Login} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </UserContext.Provider>
     </>
   );
 };
